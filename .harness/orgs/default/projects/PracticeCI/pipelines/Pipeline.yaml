@@ -1,0 +1,41 @@
+pipeline:
+  name: Pipeline
+  identifier: Pipeline
+  projectIdentifier: PracticeCI
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: GitHub_Connector
+        repoName: Pokeapi
+        build: <+input>
+  stages:
+    - stage:
+        name: PipelinePokeapi
+        identifier: PipelinePokeapi
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: true
+          buildIntelligence:
+            enabled: true
+          platform:
+            os: Windows
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    shell: Sh
+                    command: Apply Changes
+                  description: Apply Changes
