@@ -37,5 +37,5 @@ pipeline:
                   identifier: Run_1
                   spec:
                     shell: Sh
-                    command: Apply Changes
+                    command: ls -la
                   description: Apply Changes
